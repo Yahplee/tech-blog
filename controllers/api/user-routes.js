@@ -61,3 +61,5 @@ router.post("/logout", async (req, res) => {
 		res.status(500).json(err);
 	}
 });
+
+module.exports = router;
