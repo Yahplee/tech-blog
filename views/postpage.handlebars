@@ -6,47 +6,40 @@
 </div>
 
 
-<div class="card text-center">
+<div class="card text-center mb-4">
   <div class="card-header">
-    Featured
+    {{singlePost.title}}
   </div>
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <p class="card-text">{{singlePost.contents}}</p>
   </div>
   <div class="card-footer text-muted">
-    2 days ago
+    {{singlePost.user.username}} created on {{format_date singlePost.createdAt}} at {{format_time singlePost.createdAt}}
   </div>
 </div>
 
-<div class="card text-center">
+<div class="card text-center mb-4">
   <div class="card-header">
-    Featured
+    Comments
   </div>
+    {{#each singlePost.comments as |comments|}}
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <p class="card-text text-left">{{contents}}</p>
+    <p class="card-text text-right text-muted font-italic">{{user.username}} commented on {{format_date createdAt}}</p>
   </div>
-  <div class="card-footer text-muted">
-    2 days ago
-  </div>
+    {{/each}}
 </div>
 
 <div class="card text-center">
-  <div class="card-header">
-    Featured
-  </div>
   <div class="card-body">
     <form class="commentSubmit">
       <div class="form-group">
+          <input type="hidden" name="postid" value={{singlePost.id}}>
           <label for="updatePostContent">Comment</label>
-          <input type="textarea" class="form-control" id="updatePostContent">
+          <input type="text" class="form-control" id="updatePostContent">
       </div>
           <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-  </div>
-  <div class="card-footer text-muted">
-    2 days ago
   </div>
 </div>
 

@@ -2,10 +2,13 @@
   <div class="container">
     <h1 class="display-4">Dashboard</h1>
     <p class="lead">Welcome!</p>
+    <a href="/dashboard/newpost" class="btn btn-outline-secondary pl-8">Create Post</a>
   </div>
 </div>
 
-{{#each dashposts as |dashpost|}}
+
+
+{{#each dashPosts as |dashpost|}}
 <div class="card text-center">
   <div class="card-header">
     <a href="/posts/{{id}}">{{title}}</a>
