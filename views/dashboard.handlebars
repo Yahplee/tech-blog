@@ -9,7 +9,7 @@
 
 
 {{#each dashPosts as |dashpost|}}
-<div class="card text-center">
+<div class="card text-center mb-4">
   <div class="card-header">
     <a href="/posts/{{id}}">{{title}}</a>
   </div>
@@ -18,6 +18,7 @@
   </div>
   <div class="card-footer text-muted">
     Created on {{format_date createdAt}} at {{format_time createdAt}}
+    <a href="/dashboard/editpost/{{id}}" class="btn btn-outline-secondary">Edit</a>
   </div>
 </div>
 {{/each}}
