@@ -5,16 +5,16 @@
   </div>
 </div>
 
-
+{{#each dashposts as |dashpost|}}
 <div class="card text-center">
   <div class="card-header">
-    Featured
+    <a href="/posts/{{id}}">{{title}}</a>
   </div>
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <p class="card-text">{{contents}}</p>
   </div>
   <div class="card-footer text-muted">
-    2 days ago
+    Created on {{format_date createdAt}} at {{format_time createdAt}}
   </div>
 </div>
+{{/each}}
