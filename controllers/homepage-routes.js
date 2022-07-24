@@ -7,6 +7,7 @@ router.get("/", async (req, res) => {
 	try {
 		const postData = await Post.findAll({
 			include: [{ model: User, attribute: { exclude: ["password"] } }],
+			order: [["id", "DESC"]],
 		});
 
 		const posts = postData.map((post) => post.get({ plain: true }));
@@ -54,6 +55,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
 			where: {
 				user_id: req.session.user_id,
 			},
+			order: [["id", "DESC"]],
 		});
 
 		const dashPosts = postData.map((post) => post.get({ plain: true }));
