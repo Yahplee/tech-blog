@@ -13,7 +13,7 @@ const signUp = async (event) => {
 		});
 
 		if (response.ok) {
-			document.location.replace("/dashboard");
+			document.location.replace("/");
 		} else {
 			alert(`You have entered an invalid input.
             Please check to see the following requirement:
